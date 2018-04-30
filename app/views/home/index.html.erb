@@ -1,0 +1,19 @@
+<h1> 가계장부입니다 <br> 지출내역이 이곳에 표시될 예정입니다.</h>
+<a href="/home/new">가계부 쓰러가기 </a>
+
+<br>
+<h2>
+
+<% @posts.each do |x| %>
+ <%= x.id%> 번 지출 <br>
+ 제목 : <%= x.title%> <br>
+ 내용 : <%= x.content%> <br>
+ </h2>
+ <h3>
+ <a href= "home/show/<%=x.id%>"> 자세히보기 </a>
+ <br>
+ <a href= "home/destroy/<%=x.id%>"> 삭제하기 </a>
+ <br>
+ <a href= "home/edit/<%=x.id%>"> 수정하기 </a>
+ ----------------------------</h3><br>
+ <%end%>
